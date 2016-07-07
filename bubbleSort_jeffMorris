@@ -1,0 +1,13 @@
+import datetime
+import random
+import timeit
+start = timeit.default_timer()
+rando = []
+rando = random.sample(xrange(1, 10000), 100)
+for bubble in range (len(rando)-1, 0, -1):
+    for i in range (bubble):
+        if rando[i] > rando[i+1]:
+            rando[i], rando[i+1] = rando[i+1], rando[i]
+            print rando
+stop = timeit.default_timer()
+print "seconds:", stop - start
